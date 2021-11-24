@@ -1,6 +1,27 @@
 .header{
     background-color: #3148AD;
     height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .configuration input {
+    padding: 15px;
+    border: 0;
+    margin-right: 2px;
+}
+
+.header .configuration input:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.header .configuration button {
+    color: #fff;
+    background-color: #9B68E4;
+    padding: 15px;
+    border: 0;
+    border-radius: 0 10px 10px 0;
 }
 
 #invader {
@@ -9,11 +30,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-#invader table {
-
 }
 
 #invader table tr td {
@@ -25,4 +41,49 @@
 
 #invader table tr td.black {
     background-color: #000;
+}
+
+.color-picker {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.4);
+    padding: 15px;
+}
+
+.color-picker .color-button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.color-picker .color-button.active {
+    width: 50px;
+    height: 50px;
+}
+
+.color-picker .color-button:hover {
+    cursor: pointer;
+}
+
+.color-picker .color-button:not(:last-child) {
+    margin-right: 5px;
+}
+
+#plain {
+    border-color: #808E9B;
+    background-color: #D2DAE2;
+}
+#empty {
+    border-color: #000;
+    background-color: #485460;
+}
+#light {
+    border-color: #F7A835;
+    background-color: #FBC048;
+}
+#highlight {
+    border-color: #65C66D;
+    background-color: #79EA83;
 }
