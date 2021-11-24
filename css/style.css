@@ -6,4 +6,18 @@
 #invader {
     background-color: #5457CA;
     height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#invader table {
+
+}
+
+#invader table tr td {
+    padding: 15px;
+    border : 2px solid #ccc;
+    background-color: #fff;
 }
