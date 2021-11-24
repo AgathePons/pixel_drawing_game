@@ -36,11 +36,24 @@
     width : 25px;
     height: 25px;
     border : 2px solid #ccc;
-    background-color: #fff;
+    background-color: #000;
 }
 
-#invader table tr td.black {
-    background-color: #000;
+#invader table tr td.plain {
+    background-color: #D2DAE2;
+    border: 1px solid #808E9B;
+}
+#invader table tr td.empty {
+    background-color: #485460;
+    border: 1px solid #000;
+}
+#invader table tr td.light {
+    background-color: #FBC048;
+    border: 1px solid #F7A835;
+}
+#invader table tr td.highlight {
+    background-color: #79EA83;
+    border: 1px solid #65C66D;
 }
 
 .color-picker {

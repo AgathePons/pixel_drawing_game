@@ -6,7 +6,7 @@ var app = {
     'pixelInput': document.createElement('input'),
     'formButton': document.createElement('button'),
     'colorPicker': document.getElementById('colorPicker'),
-    'pickedColor': 'white',
+    'pickedColor': 'empty',
     'styles': [
         'plain',
         'empty',
@@ -43,6 +43,8 @@ var app = {
             btn.id = app.styles[index];
             app.colorPicker.appendChild(btn);
         }
+        var defaultBtn = document.getElementById('empty');
+        defaultBtn.classList.add('active');
     },
     buildBoard(numberBoard, pixelSize) {
         //Création du Tableau
@@ -57,7 +59,6 @@ var app = {
             // on construit x cellule en fonction de numberBoard
             for (let index = 0; index < numberBoard; index++) {
                 var newCell = document.createElement('td');
-                newCell.classList.add("boardCell");
                 newCell.classList.add("black");
                 newCell.id = `line-${idLine}-cell-${index}`;
                 newLine.appendChild(newCell);
@@ -75,12 +76,8 @@ var app = {
 
 pixelBoard.addEventListener('click', function (event) {
     var clickedCell = document.getElementById(event.target.id);
-    //console.log(clickedCell);
-    if (clickedCell.classList.contains('black')) {
-        clickedCell.classList.replace('black', 'white');
-    } else {
-        clickedCell.classList.replace('white', 'black');
-    }
+    clickedCell.removeAttribute('class');
+    clickedCell.classList.add(app.pickedColor);
 })
 
 // event sur clic button qui récupère value des input
