@@ -27,26 +27,25 @@ var app = {
         app.formButton.textContent = 'Valider';
         app.headerForm.appendChild(app.formButton);
     },
-    buildBoard(numberBoard) {
+    buildBoard(numberBoard, pixelSize) {
         //Création du Tableau
         var pixelBoard = document.getElementById("pixelBoard");
-        // Créaction des ligne
-
         // on construit x lignes en fonction de numberBoard 
         for (let index = 0; index < numberBoard; index++) {
-            //
             var newLine = document.createElement("tr");
             var idLine = index;
             newLine.classList.add("boardLine");
             newLine.id = index;
             pixelBoard.appendChild(newLine);
-
+            // on construit x cellule en fonction de numberBoard
             for (let index = 0; index < numberBoard; index++) {
                 var newCell = document.createElement('td');
                 newCell.classList.add("boardCell");
                 newCell.classList.add("black");
                 newCell.id = `line-${idLine}-cell-${index}`;
                 newLine.appendChild(newCell);
+                newCell.style.height = `${pixelSize}px`;
+                newCell.style.width = `${pixelSize}px`;
             }
         }
     },
@@ -70,8 +69,8 @@ pixelBoard.addEventListener('click', function (event) {
 // event sur clic button qui récupère value des input
 app.formButton.addEventListener('click', function (event) {
     app.resetBoard();
-    console.log(app.gridInput.value);
-    app.buildBoard(app.gridInput.value);
+    console.log(app.pixelInput.value);
+    app.buildBoard(app.gridInput.value, app.pixelInput.value);
 })
 
 app.init();

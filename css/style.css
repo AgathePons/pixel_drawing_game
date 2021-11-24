@@ -17,7 +17,8 @@
 }
 
 #invader table tr td {
-    padding: 15px;
+    width : 25px;
+    height: 25px;
     border : 2px solid #ccc;
     background-color: #fff;
 }
