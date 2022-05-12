@@ -26,11 +26,13 @@ var app = {
     //construire les input
     app.gridInput.id = 'grid-input';
     app.gridInput.setAttribute('type', 'number');
+    app.gridInput.setAttribute('max', 50);
     app.gridInput.setAttribute('placeholder', 'Taille de la grille');
     app.headerForm.appendChild(app.gridInput);
 
     app.pixelInput.id = 'pixel-input';
     app.pixelInput.setAttribute('type', 'number');
+    app.gridInput.setAttribute('max', 40);
     app.pixelInput.setAttribute('placeholder', 'Taille des pixels');
     console.log(app.pixelInput);
     app.headerForm.appendChild(app.pixelInput);
